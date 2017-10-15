@@ -1,0 +1,132 @@
+.caret:after {
+  content: "\edc6";
+}
+
+.sortable {
+  color: #333;
+}
+
+.sortable.active {
+  color: #166dba;
+}
+
+.sortable > .sort-direction {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  font-size: 10px;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: none;
+}
+
+.sortable:hover > .sort-direction,
+.sortable:focus > .sort-direction,
+.sortable.active > .sort-direction {
+  display: inline-block;
+}
+
+.sortable > .sort-direction:before {
+  content: "\edb7";
+}
+
+.sortable.desc > .sort-direction:before {
+  content: "\edbf";
+}
+
+.loading-bar {
+    background: #e9ebee;
+    height: 0;
+    position: relative
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%
+}
+
+.loading-bar > div {
+    background: #2196F3;
+    height: 100%;
+    left: auto;
+    position: absolute;
+    right: auto;
+    width: 0;
+}
+
+.is-loading {
+    -webkit-animation: appear .1s linear forwards
+}
+
+.is-completed {
+    -webkit-animation: disappear .3s linear forwards;
+}
+
+.is-loading > div {
+    -webkit-animation: load ease-out infinite forwards
+}
+
+.is-loading > div.slow {
+    -webkit-animation-duration: 3s
+}
+
+.is-loading > div.fast {
+    -webkit-animation-duration: 1s
+}
+
+@-webkit-keyframes appear {
+    0% {
+        height: 0
+    }
+
+    100% {
+        height: 3px
+    }
+}
+
+@-webkit-keyframes load {
+    0% {
+        left: 0%;
+        right: 0%;
+        width: 0%
+    }
+
+    50% {
+        left: 0%;
+        right: 100%;
+        width: 100%
+    }
+
+    51% {
+        left: 0%;
+        right: 100%;
+        width: 100%
+    }
+
+    100% {
+        left: 100%;
+        right: 0%;
+        width: 0%
+    }
+}
+
+@-webkit-keyframes disappear {
+    0% {
+        height: 3px
+    }
+
+    60% {
+        background: #42b72a;
+        height: 3px
+    }
+
+    100% {
+        height: 0;
+    }
+}

@@ -1,0 +1,32 @@
+<?php
+
+namespace App\Providers;
+
+use App\Services\IUpload\IUploadImage;
+use GuzzleHttp\Client;
+use Illuminate\Support\ServiceProvider;
+
+class AppServiceProvider extends ServiceProvider
+{
+    /**
+     * Bootstrap any application services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        //
+    }
+
+    /**
+     * Register any application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        $this->app->singleton(IUploadImage::class, function ($app) {
+            return new IUploadImage(new Client());
+        });
+    }
+}

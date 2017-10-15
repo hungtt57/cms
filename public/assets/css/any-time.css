@@ -1,0 +1,225 @@
+/* ------------------------------------------------------------------------------
+*
+*  # Anytime picker
+*
+*  jQuery datepicker/timepicker and a Date/String parse/format utility
+*
+*  Version: 1.2
+*  Latest update: Mar 10, 2016
+*
+* ---------------------------------------------------------------------------- */
+.AnyTime-pkr {
+    text-align: center;
+}
+.AnyTime-pkr * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.AnyTime-pkr .AnyTime-date {
+    float: left;
+}
+.AnyTime-pkr .AnyTime-date + .AnyTime-time {
+    margin-left: 50px;
+    float: left;
+}
+.AnyTime-win {
+    padding: 16px;
+    background-color: #fff;
+    display: inline-block;
+    border-radius: 3px;
+    z-index: 9999;
+    top:10% !important;
+    position: fixed !important;
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+.AnyTime-cloak {
+    position: absolute;
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+}
+.AnyTime-hdr {
+    font-size: 15px;
+    margin: 15px 10px;
+    line-height: 1;
+}
+.AnyTime-x-btn {
+    display: none;
+    font-size: 0;
+    cursor: pointer;
+    float: right;
+    border-radius: 2px;
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+}
+.AnyTime-x-btn:hover {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+.AnyTime-x-btn:after {
+    content: '\ed6b';
+    font-family: 'icomoon';
+    font-size: 16px;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.AnyTime-lbl {
+    font-size: 13px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    margin-top: 25px;
+}
+.AnyTime-lbl:first-child {
+    margin-top: 8px;
+}
+.AnyTime-yrs .ui-state-highlight,
+.AnyTime-yrs .ui-state-highlight:hover {
+    background-color: #F44336;
+    color: #fff;
+}
+.AnyTime-mons .ui-state-highlight,
+.AnyTime-mons .ui-state-highlight:hover {
+    background-color: #26A69A;
+    color: #fff;
+}
+.AnyTime-time .ui-state-highlight,
+.AnyTime-time .ui-state-highlight:hover {
+    background-color: #607D8B;
+    color: #fff;
+}
+.AnyTime-dom-table .ui-state-highlight,
+.AnyTime-body-yr-selector .ui-state-highlight,
+.AnyTime-dom-table .ui-state-highlight:hover,
+.AnyTime-body-yr-selector .ui-state-highlight:hover {
+    background-color: #2196F3;
+    color: #fff;
+}
+.AnyTime-yrs-past-btn,
+.AnyTime-yrs-ahead-btn {
+    display: inline-block;
+}
+.AnyTime-yr-prior-btn,
+.AnyTime-yr-cur-btn,
+.AnyTime-yr-next-btn {
+    display: inline-block;
+    min-width: 50px;
+}
+.AnyTime-mons:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.AnyTime-dom-table {
+    width: 100%;
+}
+.AnyTime-pkr th.AnyTime-dow {
+    color: #999999;
+    font-size: 12px;
+    padding: 8px;
+    font-weight: 400;
+}
+.AnyTime-mon-btn {
+    float: left;
+}
+.AnyTime-mon7-btn {
+    clear: left;
+}
+.AnyTime-dom-btn:hover {
+    background-color: #f5f5f5;
+}
+.AnyTime-dom-btn-empty {
+    display: none;
+}
+.AnyTime-time,
+.AnyTime-hrs-am,
+.AnyTime-hrs-pm,
+.AnyTime-mins-tens,
+.AnyTime-mins-ones,
+.AnyTime-secs-tens,
+.AnyTime-secs-ones,
+.AnyTime-hrs,
+.AnyTime-mins,
+.AnyTime-secs,
+.AnyTime-offs {
+    display: inline-block;
+}
+.AnyTime-btn {
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 2px;
+}
+.AnyTime-btn:hover {
+    background-color: #f5f5f5;
+}
+.AnyTime-hr-btn,
+.AnyTime-min-ten-btn,
+.AnyTime-min-one-btn,
+.AnyTime-sec-ten-btn,
+.AnyTime-sec-one-btn {
+    min-width: 40px;
+}
+.AnyTime-hrs-pm,
+.AnyTime-mins-ones,
+.AnyTime-secs-ones {
+    margin-left: 2px;
+}
+.AnyTime-mins-tens,
+.AnyTime-secs-tens {
+    margin-left: 20px;
+}
+.AnyTime-off-cur-btn {
+    display: inline-block;
+    overflow: hidden;
+}
+.AnyTime-off-select-btn {
+    display: inline-block;
+    vertical-align: top;
+}
+.AnyTime-off-selector {
+    margin: 10px;
+    position: absolute;
+}
+.AnyTime-body-off-selector {
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    white-space: nowrap;
+}
+.AnyTime-off-off-btn {
+    text-align: left;
+}
+.AnyTime-yr-selector {
+    position: absolute;
+    width: 90%;
+}
+.AnyTime-body-yr-selector {
+    margin: 0;
+}
+.AnyTime-yr-mil,
+.AnyTime-yr-cent,
+.AnyTime-yr-dec,
+.AnyTime-yr-yr,
+.AnyTime-yr-era {
+    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+}
+.AnyTime-era-btn {
+    margin-left: 10px;
+}
+@media (max-width: 769px) {
+    .AnyTime-pkr .AnyTime-date {
+        float: none;
+    }
+    .AnyTime-mon-btn {
+        float: none;
+        display: inline-block;
+    }
+    .AnyTime-date + .AnyTime-time {
+        margin-left: 0;
+        margin-top: 25px;
+        float: none;
+    }
+}
